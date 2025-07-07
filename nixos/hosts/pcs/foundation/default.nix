@@ -9,6 +9,8 @@
 }: {
   imports = [
     ../../../modules/common
+    ./nvidia.nix
+    ./intel.nix
   ];
 
   networking.hostName = "foundation";
@@ -25,6 +27,11 @@
       extraGroups = ["wheel" "networkmanager" "docker"];
       initialPassword = "password";
     };
+  };
+
+  drivers = {
+    nvidia.enable = true;
+    intel.enable = true;
   };
 
   # Override common settings that don't work well in WSL
