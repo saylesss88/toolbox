@@ -29,6 +29,7 @@
     };
   };
 
+  # Enable Driver configurations
   drivers = {
     nvidia.enable = true;
     intel.enable = true;
